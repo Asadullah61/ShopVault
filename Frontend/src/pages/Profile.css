@@ -1,0 +1,32 @@
+.profile-page { padding: 40px 0 60px; }
+.profile-layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; }
+.profile-nav {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 28px 20px;
+  position: sticky; top: 80px; height: fit-content;
+  text-align: center;
+}
+.profile-avatar-big {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--gold-bg); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; font-weight: 700; margin-bottom: 8px;
+}
+.profile-name { font-weight: 600; font-size: 15px; }
+.profile-email { font-size: 13px; color: var(--text-3); margin-bottom: 8px; }
+.profile-tabs { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 8px; }
+.profile-tabs button {
+  padding: 9px 12px; border-radius: 8px; font-size: 13px;
+  color: var(--text-2); text-align: left; transition: all 0.15s;
+}
+.profile-tabs button:hover, .profile-tabs button.active {
+  background: var(--bg-3); color: var(--text);
+}
+.profile-tabs button.active { color: var(--gold); }
+.profile-card { padding: 28px; display: flex; flex-direction: column; gap: 20px; }
+.profile-card h2 { font-size: 1.1rem; font-weight: 600; }
+@media (max-width: 768px) {
+  .profile-layout { grid-template-columns: 1fr; }
+  .profile-nav { position: static; }
+}

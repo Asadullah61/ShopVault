@@ -1,0 +1,25 @@
+.orders-page { padding: 40px 0 60px; }
+.orders-list { display: flex; flex-direction: column; gap: 12px; }
+.order-card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: all 0.2s;
+}
+.order-card:hover { border-color: var(--border-2); transform: translateY(-1px); }
+.order-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.order-num { font-weight: 600; font-size: 15px; }
+.order-date { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.order-items-row { display: flex; gap: 8px; }
+.order-thumb {
+  width: 52px; height: 52px; border-radius: 10px; overflow: hidden;
+  background: var(--bg-3); flex-shrink: 0;
+}
+.order-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.order-thumb.more {
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: var(--text-2);
+}
+.order-bottom { display: flex; justify-content: space-between; align-items: center; }
+.order-count { font-size: 13px; color: var(--text-2); }
+.order-total { font-weight: 700; font-size: 1rem; }

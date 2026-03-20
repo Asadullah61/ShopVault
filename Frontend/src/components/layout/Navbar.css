@@ -1,0 +1,138 @@
+.navbar {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(14,14,15,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+.navbar.scrolled {
+  border-bottom-color: var(--border);
+  background: rgba(14,14,15,0.92);
+}
+.navbar-inner {
+  display: flex; align-items: center; gap: 32px;
+  height: 64px;
+}
+
+/* Logo */
+.navbar-logo { display: flex; align-items: center; gap: 10px; }
+.logo-mark {
+  width: 32px; height: 32px;
+  background: var(--gold);
+  color: #0e0e0f;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 13px; border-radius: 7px;
+  letter-spacing: -0.02em;
+}
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem; font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Nav links */
+.navbar-links {
+  display: flex; align-items: center; gap: 4px;
+  margin-left: auto;
+}
+.navbar-links a {
+  padding: 6px 12px; border-radius: 7px;
+  font-size: 14px; font-weight: 500; color: var(--text-2);
+  transition: all 0.2s;
+}
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--text); background: var(--bg-3); }
+.navbar-links .admin-link { color: var(--gold); }
+.navbar-links .admin-link:hover { background: var(--gold-bg); }
+
+/* Actions */
+.navbar-actions { display: flex; align-items: center; gap: 12px; margin-left: 16px; }
+
+/* Cart button */
+.cart-btn {
+  position: relative;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius); color: var(--text-2);
+  transition: all 0.2s;
+}
+.cart-btn:hover { background: var(--bg-3); color: var(--text); }
+.cart-count {
+  position: absolute; top: 4px; right: 4px;
+  background: var(--gold); color: #0e0e0f;
+  font-size: 10px; font-weight: 700;
+  min-width: 16px; height: 16px;
+  border-radius: 10px; padding: 0 4px;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+}
+
+/* User dropdown */
+.user-dropdown { position: relative; }
+.user-btn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 12px 5px 5px;
+  border-radius: 40px;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--text);
+  transition: all 0.2s;
+}
+.user-btn:hover { border-color: var(--border-2); }
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--gold-bg); color: var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700;
+}
+.user-name { font-size: 13px; font-weight: 500; }
+.dropdown-menu {
+  position: absolute; top: calc(100% + 8px); right: 0;
+  min-width: 180px;
+  background: var(--bg-2);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 8px;
+  box-shadow: var(--shadow-lg);
+}
+.dropdown-menu a,
+.dropdown-menu button {
+  display: block; width: 100%;
+  padding: 9px 12px; border-radius: 8px;
+  font-size: 14px; color: var(--text-2);
+  text-align: left; transition: all 0.15s;
+}
+.dropdown-menu a:hover,
+.dropdown-menu button:hover { background: var(--bg-3); color: var(--text); }
+.dropdown-menu .admin-item { color: var(--gold); }
+.dropdown-menu hr { border: none; border-top: 1px solid var(--border); margin: 6px 0; }
+
+.auth-links { display: flex; gap: 8px; }
+
+/* Mobile toggle */
+.menu-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  width: 36px; height: 36px; align-items: center; justify-content: center;
+  border-radius: 8px; transition: background 0.2s;
+}
+.menu-toggle:hover { background: var(--bg-3); }
+.menu-toggle span {
+  display: block; width: 18px; height: 1.5px;
+  background: var(--text-2); border-radius: 2px; transition: all 0.2s;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .navbar-links {
+    display: none; position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: var(--bg-2);
+    flex-direction: column; align-items: stretch;
+    padding: 12px; gap: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .navbar-links.open { display: flex; }
+  .navbar-links a { padding: 12px 16px; }
+  .user-name { display: none; }
+}

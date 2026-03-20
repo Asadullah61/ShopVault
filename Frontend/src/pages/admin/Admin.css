@@ -1,0 +1,123 @@
+.admin-page { padding: 0 0 60px; }
+.admin-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 8px; }
+
+/* Stats */
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+.stat-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 20px;
+  border-left: 3px solid var(--stat-color, var(--gold));
+}
+.stat-icon { font-size: 28px; }
+.stat-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-3); }
+.stat-value { font-size: 1.6rem; font-weight: 700; color: var(--text); }
+
+.admin-actions-bar { display: flex; gap: 12px; margin-bottom: 32px; }
+
+.recent-section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; }
+.recent-orders { display: flex; flex-direction: column; gap: 6px; }
+.recent-order-row {
+  display: grid; grid-template-columns: 120px 1fr 100px 110px 80px;
+  align-items: center; gap: 16px;
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 12px 16px;
+  font-size: 14px; transition: border-color 0.2s;
+  color: var(--text);
+}
+.recent-order-row:hover { border-color: var(--border-2); }
+.ro-num { font-weight: 600; font-family: monospace; font-size: 13px; }
+.ro-date { font-size: 12px; color: var(--text-3); }
+.ro-total { font-weight: 700; text-align: right; }
+.no-data { color: var(--text-3); font-size: 14px; padding: 24px 0; text-align: center; }
+
+/* Table */
+.admin-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th {
+  background: var(--bg-3); padding: 12px 16px;
+  font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--text-3);
+  font-weight: 600; text-align: left; white-space: nowrap;
+}
+.admin-table td {
+  padding: 12px 16px; border-top: 1px solid var(--border);
+  font-size: 14px; background: var(--bg-2); color: var(--text);
+}
+.admin-table tr:hover td { background: var(--bg-3); }
+.table-img {
+  width: 48px; height: 48px; border-radius: 8px;
+  object-fit: cover; background: var(--bg-3); display: block;
+}
+.table-name { font-weight: 500; }
+.table-brand { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+.table-order-num { font-family: monospace; font-size: 13px; font-weight: 600; color: var(--gold); }
+
+/* Sort select reused in admin */
+.sort-select {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 9px 12px;
+  color: var(--text); font-size: 14px; cursor: pointer;
+  outline: none; transition: border 0.2s;
+}
+.sort-select:focus { border-color: var(--gold); }
+
+/* Modal */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal {
+  background: var(--bg-2); border: 1px solid var(--border-2);
+  border-radius: 20px; width: 100%; max-width: 560px;
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 24px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--bg-2); z-index: 1;
+}
+.modal-header h2 { font-size: 1.1rem; font-weight: 600; }
+.modal-close {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--text-2); transition: all 0.2s;
+  background: none; border: none; cursor: pointer;
+}
+.modal-close:hover { background: var(--bg-3); color: var(--text); }
+.modal-body {
+  padding: 24px; display: flex; flex-direction: column; gap: 14px;
+}
+.modal-body textarea {
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 10px 12px;
+  color: var(--text); font-size: 14px; outline: none;
+  transition: border 0.2s; resize: vertical;
+  font-family: var(--font-body); width: 100%;
+}
+.modal-body textarea:focus { border-color: var(--gold); }
+.modal-footer {
+  display: flex; justify-content: flex-end; gap: 10px;
+  padding-top: 8px; border-top: 1px solid var(--border); margin-top: 4px;
+}
+
+/* Toggle label (also used in shop) */
+.toggle-label {
+  display: flex; align-items: center; gap: 8px;
+  padding: 4px 0; cursor: pointer; font-size: 13px; color: var(--text-2);
+}
+.toggle-label input { accent-color: var(--gold); }
+
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .recent-order-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
