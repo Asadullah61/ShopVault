@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://shop-vault-5jqy.vercel.app/api',
+  baseURL:  process.env.REACT_APP_API_URL + '/api' || 'http://localhost:5000/api',
 
   timeout: 15000,
   headers: { 'Content-Type': 'application/json' }
