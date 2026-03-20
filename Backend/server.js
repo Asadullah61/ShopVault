@@ -20,3 +20,4 @@ app.use((req, res) => res.status(404).json({ message: 'Route ' + req.originalUrl
 app.use((err, req, res, next) => { const statusCode = err.statusCode || 500; res.status(statusCode).json({ message: err.message || 'Internal server error' }); });
 const PORT = process.env.PORT || 5000;
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/shopvault').then(() => { console.log('MongoDB connected'); app.listen(PORT, () => console.log('ShopVault API running on port ' + PORT)); }).catch(err => { console.error('MongoDB error:', err); process.exit(1); });
+module.exports = app;
