@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL:  'https://shopvault33.vercel.app/api'
+  baseURL:  'https://shopvault33.vercel.app/api',
   timeout: 15000,
   headers: { 'Content-Type': 'application/json' }
 });
